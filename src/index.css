@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --color-brand-bg: #F7FAF8;
+  --color-brand-card: #FFFFFF;
+  --color-brand-primary: #087F5B;
+  --color-brand-neon: #00E6A0;
+  --color-brand-glow: #B8FFE5;
+  --color-brand-text: #142B25;
+  --color-brand-muted: #71817A;
+  --color-brand-border: #DCEBE4;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #F7FAF8;
+  color: #142B25;
+  overflow-x: hidden;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Light Neon Glow Utilities */
+.neon-glow-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.neon-glow-hover:hover {
+  box-shadow: 0 0 20px rgba(0, 230, 160, 0.4), 0 4px 12px rgba(8, 127, 91, 0.15);
+  border-color: #00E6A0;
+}
+
+.neon-card {
+  background: #FFFFFF;
+  border: 1px solid #DCEBE4;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.neon-card:hover {
+  border-color: rgba(0, 230, 160, 0.6);
+  box-shadow: 0 10px 25px -5px rgba(8, 127, 91, 0.08), 0 0 16px rgba(0, 230, 160, 0.18);
+  transform: translateY(-2px);
+}
+
+.neon-pill-active {
+  background: #087F5B;
+  color: #FFFFFF;
+  box-shadow: 0 0 14px rgba(0, 230, 160, 0.4);
+}
+
+/* Custom Leaflet Neon Emerald Marker Styling */
+.acrelyn-neon-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.acrelyn-marker-bubble {
+  padding: 4px 9px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+  background: #FFFFFF;
+  color: #087F5B;
+  border: 1.5px solid #00E6A0;
+  box-shadow: 0 2px 10px rgba(0, 230, 160, 0.3), 0 4px 12px rgba(8, 127, 91, 0.12);
+}
+
+.acrelyn-marker-bubble.active {
+  background: #087F5B;
+  color: #FFFFFF;
+  border-color: #00E6A0;
+  box-shadow: 0 0 20px rgba(0, 230, 160, 0.7), 0 6px 16px rgba(8, 127, 91, 0.25);
+  transform: scale(1.1);
+}
+
+.acrelyn-marker-bubble.demo {
+  background: #FFFBEB;
+  color: #92400E;
+  border-color: #F59E0B;
+}
+
+.acrelyn-marker-pin {
+  width: 8px;
+  height: 8px;
+  background: #087F5B;
+  border: 1.5px solid #00E6A0;
+  border-radius: 50%;
+  margin-top: -3px;
+  box-shadow: 0 0 8px #00E6A0;
+}
+
+.acrelyn-marker-pin.pulse {
+  animation: neon-pulse 1.8s infinite;
+}
+
+@keyframes neon-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 230, 160, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(0, 230, 160, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 230, 160, 0);
+  }
+}
+
+/* Custom leaflet popup wrapper */
+.leaflet-popup-content-wrapper {
+  padding: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: 0 16px 36px -4px rgba(8, 127, 91, 0.18), 0 0 20px rgba(0, 230, 160, 0.25);
+  border: 1px solid #DCEBE4;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  line-height: 1.4;
+}
+
+.leaflet-container {
+  font-family: var(--font-sans);
+}
+
+/* Scrollbar polish */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F7FAF8;
+}
+::-webkit-scrollbar-thumb {
+  background: #DCEBE4;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00E6A0;
+}
